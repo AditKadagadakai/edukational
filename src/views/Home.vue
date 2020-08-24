@@ -105,9 +105,9 @@
       </template>
       <template v-slot:cell(url)="data">
         <!-- `data.value` is the value after formatted by the Formatter -->
-        <a :href="`${data.value.toLowerCase()}`" target="_blank">
+        <a :href="`//${data.value.toLowerCase()}`" target="_blank" rel="external">
           {{
-          'Click Here'
+          data.value
           }}
         </a>
       </template>
@@ -243,6 +243,10 @@ export default {
         },
       ],
       headings: [
+        {
+          key: "description",
+          label: "Description",
+        },
         {
           key: "url",
           label: "Link",
